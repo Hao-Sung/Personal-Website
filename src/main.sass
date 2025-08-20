@@ -1,0 +1,23 @@
+@use './assets/SASS/_var.sass'
+
+*
+    margin: 0px
+    padding: 0px
+    font-family: "Helvetica", "Noto Sans TC", "Arial", "sans-serif"
+
+body
+    overflow-x: hidden
+    overflow-y: scroll
+    //cursor: none
+
+$container-size: 1, 2, 3, 4
+@each $size in $container-size
+    .container-#{$size}
+        width: 100vw
+        height: 100vh * $size
+        color: var.$font-color
+        background-color: var.$bg-color
+
+        // !For sticky to work properly, overflow property shouldn't be used
+        overflow: clip
+

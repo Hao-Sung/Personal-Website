@@ -1,0 +1,130 @@
+@use '../../assets/SASS/var'
+@use '../../assets/SASS/mixin'
+
+//*
+//    border: 1px solid white
+
+.sticky
+    @include mixin.sticky-effect
+
+// Add "position: absolute" for z-index to work
+.full-name
+    > div
+        position: absolute
+
+.full-name
+    .snapshot
+        overflow: hidden
+        position: absolute
+        opacity: 0
+        img
+            max-width: 100%
+            height: auto
+
+    // General Monitor styles 
+    @media screen and (min-width: var.$layout-breakpoint-small)
+        .snapshot
+            // try to maintain 1080px X 1350px (4X5) ratio
+            height: 255px
+            width: 205px
+
+    // Mobile styles
+    @media screen and (max-width: var.$layout-breakpoint-small)
+        .snapshot
+            // try to maintain 1080px X 1350px (4X5) ratio
+            height: 170px
+            width: 136.5px
+
+.full-name
+    .back
+        z-index: 0
+        @include mixin.center-inner-item
+        overflow: hidden
+    .front
+        z-index: 1
+        @include mixin.center-inner-item
+        background-color: rgba(24,24,24, 0.825)
+
+    #scrollDownSign
+        position: absolute
+        @include mixin.center-inner-item
+
+        // Make SVG graph and text ring can overlap (on the same position)
+        > img, span
+            position: absolute
+
+    #name
+        margin-top: 80px // #Text slide-up distance for animation
+        opacity: 0
+
+    #scrollDownSign
+        opacity: 0
+
+    // General Monitor styles 
+    @media screen and (min-width: var.$layout-breakpoint-small)
+        #name
+            font-size: 220px
+        #scrollDownSign
+            bottom: 16%
+            right: 9%
+
+    // Mobile styles
+    @media screen and (max-width: var.$layout-breakpoint-small)
+        #name
+            font-size: 85px
+        #scrollDownSign
+            bottom: 16%
+            right: 20%
+
+
+// Add "position: absolute" for z-index to work
+.welcome
+    > article
+        position: absolute
+        background: var.$bg-transparent
+        //background: var.$bg-color
+    
+.welcome-message
+    z-index: 3
+    display: grid
+    grid-template-rows: 1fr 1.5fr 1fr
+
+    div
+        @include mixin.center-inner-item
+        span
+            font-weight: bold
+            font-family: "Lora", "Helvetica", "Noto Sans TC", "Arial", "sans-serif"
+
+    div:nth-child(2) span
+        font-weight: normal
+
+
+    // General Monitor styles 
+    @media screen and (min-width: var.$layout-breakpoint-small)
+        div
+            span
+                font-size: 220px
+
+        div:nth-child(2) span
+            font-size: 290px
+            margin-top: -80px
+
+        div:nth-child(3) span
+            margin-top: -80px
+
+    // Mobile styles
+    @media screen and (max-width: var.$layout-breakpoint-small)
+        div
+            span
+                font-size: 65px
+
+        div:first-child span
+            //margin-bottom: -500px <-----------
+            margin-bottom: -250px
+
+        div:last-child span
+            //margin-top: -500px <-----------
+            margin-top: -250px
+
+        div:nth-child(2) span
+            font-size: 90px

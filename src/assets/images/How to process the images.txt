@@ -1,0 +1,6 @@
+1. Upload pictures to Adobe express
+2. Use Filter and Tone to modify the picture (Grayscale)
+3. Download and upload again to Adobe Photoshop
+4. Use "Color Balance", "Black and White" to make the picture more indigo
+5. Use "Curve" to INVERSE the RGB (opposite direction from RGB histogram)
+6. Resize the picture with Adobe

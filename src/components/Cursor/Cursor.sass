@@ -1,0 +1,38 @@
+@use '../../assets/SASS/var'
+@use '../../assets/SASS/mixin'
+
+//*
+//    border: 1px solid #FFF
+
+#cursor-center, #cursor-ring
+    position: fixed
+    border-radius: 50%
+
+    // Center on the viewport initially
+    //inset: 0
+    //margin: auto
+    top: 0
+    left: 0
+    transform: translate(-50%, -50%)
+
+    // Otherwise custom cursor will interfere with clicks on elements beneath it
+    pointer-events: none
+
+    @media screen and (max-width: var.$layout-breakpoint-small)
+        display: none
+
+
+#cursor-center
+    z-index: 2
+    
+    // Will scale to 56px when hover on anchor
+    width: 8px
+    height: 8px
+    background-color: #FAFAF9
+
+#cursor-ring
+    z-index: 1
+
+    width: 40px
+    height: 40px
+    border: 2px solid #A6A09B

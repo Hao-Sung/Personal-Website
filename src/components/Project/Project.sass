@@ -1,0 +1,97 @@
+@use '../../assets/SASS/var'
+@use '../../assets/SASS/mixin'
+
+//*
+//    border: 1px solid #FFF
+
+.container-project
+    width: 100vw
+    color: var.$font-color
+    background-color: var.$bg-color
+    overflow: hidden
+    display: grid
+    grid-template-rows: 1fr 3fr 1fr
+
+    .main
+        //border: 3px solid #F00
+        padding: 0px 10px
+        @include mixin.v-center-h-toStart
+
+    // General Monitor styles 
+    @media screen and (min-width: var.$layout-breakpoint-small)
+        height: 50vh
+
+    // Mobile styles
+    @media screen and (max-width: var.$layout-breakpoint-small)
+        height: 15vh
+
+.project
+    .front
+        //border: 3px solid #FF0
+        // To overlay .back and .front division
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 2
+        @include mixin.center-inner-item
+        overflow: visible
+        cursor: pointer
+
+        img
+            // maintain 1200px X 670px (16 X 9) ratio
+            height: 300px
+            width: 530px
+            transition: 1.25s ease-in-out
+            border-radius: 20px
+            opacity: 0
+
+            @media screen and (max-width: var.$layout-breakpoint-small)
+                display: none
+
+    .front:hover img
+        opacity: 1
+
+.project
+    //border: 3px solid #F0F
+    height: 90%
+    text-transform: uppercase
+
+    // To overlay .back and .front division
+    position: relative
+
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    .back
+        // To overlay .back and .front division
+        z-index: 1
+        //border: 3px solid #F00
+
+        .keywords
+            color: #CB4335
+            white-space: nowrap
+        
+        .container-keywords
+            overflow: hidden
+            
+        header
+            font-weight: bold
+
+        // General Monitor styles 
+        @media screen and (min-width: var.$layout-breakpoint-small)
+            header
+                font-size: 100px
+            .keywords
+                font-size: 16px
+            .container-keywords
+                margin-top: -10px
+                
+        // Mobile styles
+        @media screen and (max-width: var.$layout-breakpoint-small)
+            header
+                font-size: 30px
+            .keywords
+                font-size: 14px

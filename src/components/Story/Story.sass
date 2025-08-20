@@ -1,0 +1,213 @@
+@use '../../assets/SASS/var'
+@use '../../assets/SASS/mixin'
+
+//*
+//   border: 1px solid #FFF
+
+// TODO: make rule of .container-about and .container-cert more DRY
+
+.container-story
+    @include mixin.center-inner-item-toStart
+    width: 100vw
+    color: var.$font-color
+    background-color: var.$bg-color
+
+    // General Monitor styles 
+    @media screen and (min-width: var.$layout-breakpoint-small)
+        height: 400vh
+
+.story
+    //border: 3px solid #F00
+    width: 80%
+    @include mixin.v-center-h-toStart
+    
+    // General Monitor styles 
+    @media screen and (min-width: var.$layout-breakpoint-small)
+        height: 100vh
+        @include mixin.sticky-effect
+    
+    // Mobile styles
+    // -> Use padding to control space between container,
+    // -> can make container more dynamic to accommodate certificates table
+    @media screen and (max-width: var.$layout-breakpoint-small)
+        padding: 40px 0px
+
+.container-story
+    .right-panel, .left-panel
+        @include mixin.center-inner-item
+        overflow: hidden
+
+        // General Monitor styles 
+        @media screen and (min-width: var.$layout-breakpoint-small)
+            flex-direction: column
+            width: 50%
+            height: 100%
+
+        // Mobile styles
+        @media screen and (max-width: var.$layout-breakpoint-small)
+            width: 100%
+
+.container-story
+    .left-panel
+        img
+            max-width: 100%
+            height: auto
+
+        // Mobile styles
+        @media screen and (max-width: var.$layout-breakpoint-small)
+            display: none
+
+.container-story
+    .right-panel
+        //border: 3px solid #F00
+        position: relative
+        header
+            width: 100%
+            font-weight: bold
+            align-self: flex-start
+            overflow: hidden
+        
+        .content
+            align-self: flex-end
+            overflow: hidden
+
+        .container-about, .container-cert
+            
+            //border: 3px solid #F0F
+            display: flex
+            flex-direction: column
+            overflow: hidden
+
+            // General Monitor styles 
+            @media screen and (min-width: var.$layout-breakpoint-small)
+                position: absolute  // Overlap about and certificates containers
+                width: 80%
+                height: 85%
+
+            // Mobile styles
+            @media screen and (max-width: var.$layout-breakpoint-small)
+                justify-content: center
+                width: 100%
+                height: 100%
+
+        
+
+.container-about
+
+    // General Monitor styles 
+    @media screen and (min-width: var.$layout-breakpoint-small)
+        z-index: 1
+        header
+            position: relative
+            //border: 3px solid #FFF
+            top: 20%
+            height: 104px
+            font-size: 35px
+
+            > div
+                position: absolute
+                padding-top: 150px   // slide-up distance in animation
+
+        .content
+            position: relative
+            //border: 3px solid #00F
+            top: 24%
+            width: 90%
+            height: 300px
+            font-size: 16px
+            line-height: 2
+
+            > div
+                position: absolute
+                padding-top: 400px   // slide-up distance in animation
+                
+                p
+                    padding-top: 5px
+            
+
+    // Mobile styles
+    @media screen and (max-width: var.$layout-breakpoint-small)
+        header
+            font-size: 20px
+            padding-bottom: 20px
+        .content
+            width: 90%
+            font-size: 14px
+            line-height: 2
+
+
+.container-cert
+    .table
+        width: 100%
+        height: 100%
+        display: grid
+        grid-template-rows: repeat(8, 1fr)
+
+        .table-header
+            font-weight: bold
+
+        .item
+            display: grid
+            grid-template-columns: 1.1fr 4fr 0.3fr
+            align-items: center
+
+
+    // General Monitor styles 
+    @media screen and (min-width: var.$layout-breakpoint-small)
+        opacity: 0
+        z-index: 2
+        header
+            position: relative
+            //border: 3px solid #F0F
+            font-size: 35px
+            top: 8%
+            height: 52px
+
+            > div
+                position: absolute
+                padding-top: 90px   // slide-up distance in animation
+
+        .content
+            position: relative
+            //border: 3px solid #0FF
+            top: 15%
+            width: 100%
+            height: 75%
+
+            .table
+                position: absolute
+                padding-top: 100vh  // slide-up distance in animation
+
+            .item
+                cursor: pointer
+                transition: 0.2s ease-in-out
+                font-size: 16px
+                border-bottom: 2px solid #535050
+                svg
+                    transition: 0.5s ease-in-out
+                    color: #535050
+                    width: 20px
+                    height: 20px
+
+            .item:hover
+                border-bottom: 2px solid #C82909
+                svg
+                    color: #C82909
+
+
+    // Mobile styles
+    @media screen and (max-width: var.$layout-breakpoint-small)
+        header
+            font-size: 20px
+            padding-bottom: 20px
+
+        .table
+            .item
+                font-size: 15px
+                padding: 20px 0px
+                white-space: nowrap
+                border-bottom: 1px solid #535050
+                svg
+                    width: 16px
+                    height: 16px
+                        

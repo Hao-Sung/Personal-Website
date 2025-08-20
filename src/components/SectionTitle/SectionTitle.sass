@@ -1,0 +1,77 @@
+@use '../../assets/SASS/var'
+
+//*
+//    border: 3px solid white
+
+.section-container
+    //border: 3px solid white
+    width: 100vw
+    color: var.$font-color
+    background-color: var.$bg-color
+
+    // ! Disabled for border-top animation
+    // display: flex
+    // justify-content: flex-end
+    // align-items: flex-end
+
+    // General Monitor styles 
+    @media screen and (min-width: var.$layout-breakpoint-small)
+        height: 400px
+
+    // Mobile styles
+    @media screen and (max-width: var.$layout-breakpoint-small)
+        height: 100px
+
+
+.section-container
+    .title
+        position: relative // Add for border-top growing
+
+        border-top: 3px solid white
+        //margin-right: 4%
+        //margin-bottom: 4%
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+
+        span:last-child
+            overflow: hidden // #Hide overflow element for text slide-up
+
+        .text-slide
+            //border: 3px solid white
+            text-align: right
+
+        // General Monitor styles 
+        @media screen and (min-width: var.$layout-breakpoint-small)
+            left: 45%
+            top: 70%
+            height: 30%
+            width: 25% // Total 50%
+            span:first-child
+                font-size: 25px
+                margin-top: 12px
+
+            span:last-child
+                height: 65px
+
+            .text-slide
+                font-size: 45px
+                padding-top: 60px // #Text slide-up distance for animation
+
+        // Mobile styles
+        @media screen and (max-width: var.$layout-breakpoint-small)
+            left: 5%
+            top: 50%
+            height: 45%
+            width: 40% // Total 90%
+            span:first-child
+                font-size: 18px
+                margin-top: 6px
+
+            span:last-child
+                height: 40px
+
+            .text-slide
+                font-size: 26px
+                padding-top: 40px // #Text slide-up distance for animation
+                

@@ -1,66 +1,69 @@
-import clustering from "../assets/image/clustering.png";
-import tsFitting from "../assets/image/tsFitting.png";
-import tsMissing from "../assets/image/tsMissing.png";
-import segment from "../assets/image/segment.png";
-import sankey from "../assets/image/sankey.png";
-import worldCloudBG from "../assets/image/worldCloudBG.png";
-import stackBar from "../assets/image/stackBar.png";
+import clustering from "../assets/images/clustering.png";
+import tsFitting from "../assets/images/tsFitting.png";
+import tsMissing from "../assets/images/tsMissing.png";
+import segment from "../assets/images/segment.png";
+import sankey from "../assets/images/sankey.png";
+import worldCloudBG from "../assets/images/worldCloudBG.png";
+import stackBar from "../assets/images/stackBar.png";
 
+// Note:
+//    - coord will be destructed to parameters of animate() method.
+//    - "%" is compared with right bottom corner of the container
 const bgImages = [
   {
     src: stackBar,
-    alt: "clustering",
+    alt: "Stacked Bar Chart",
     coord: {
-      top: "70%",
-      right: "90%",
+      translateX: "-=720px",
+      translateY: "+=280px",
     },
   },
   {
     src: sankey,
-    alt: "cluster",
+    alt: "Sankey Plot",
     coord: {
-      bottom: "62%",
-      right: "80%",
+      translateX: "-=560px",
+      translateY: "-=220px",
     },
   },
   {
     src: clustering,
-    alt: "clustering",
+    alt: "Word Clustering",
     coord: {
-      bottom: "40%",
-      right: "57%",
+      translateX: "-=200px",
+      translateY: "-=50px",
     },
   },
   {
     src: segment,
-    alt: "cluster",
+    alt: "Time Series Segment Plot",
     coord: {
-      bottom: "5%",
-      right: "43%",
+      translateX: "+=0px",
+      translateY: "+=200px",
     },
   },
   {
     src: tsFitting,
-    alt: "cluster",
+    alt: "Time Series Module Fitting Result",
     coord: {
-      bottom: "62%",
-      left: "66%",
+      translateX: "+=350px",
+      translateY: "-=220px",
     },
   },
   {
     src: tsMissing,
-    alt: "cluster",
+    alt: "Time Series Interpolation",
     coord: {
-      top: "65%",
-      left: "75%",
+      translateX: "+=480px",
+      translateY: "+=230px",
     },
   },
   {
     src: worldCloudBG,
-    alt: "segment plot",
+    alt: "Word Cloud",
     coord: {
-      top: "20%",
-      left: "87%",
+      translateX: "+=650px",
+      translateY: "-=100px",
     },
   },
 ];

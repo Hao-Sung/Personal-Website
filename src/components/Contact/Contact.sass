@@ -1,0 +1,104 @@
+@use '../../assets/SASS/var'
+@use '../../assets/SASS/mixin'
+
+//*
+//    border: 1px solid #FFF
+
+@mixin contact-layout
+    display: grid
+    grid-template-rows: 1fr 1.7fr 1.7fr 1fr
+
+// Add "position: relative" only for z-index to work
+.container-contact
+    .back, .front
+        position: absolute
+
+.container-contact
+    @include mixin.sticky-effect
+    overflow: hidden
+
+    .back
+        z-index: 0
+        @include contact-layout
+
+        .left-slide
+            align-self: end
+        .right-slide
+            text-align: right
+
+        // General Monitor styles 
+        @media screen and (min-width: var.$layout-breakpoint-small)
+            .left-slide
+                font-size: 280px
+                margin-bottom: -55px
+            .right-slide
+                font-size: 280px
+                margin-top: -55px
+
+        // Mobile styles
+        @media screen and (max-width: var.$layout-breakpoint-small)
+            .left-slide
+                font-size: 100px
+                margin-bottom: -15px
+
+            .right-slide
+                font-size: 100px
+                margin-top: -15px
+
+
+.container-contact
+    .front
+        z-index: 1
+        @include contact-layout
+        background: rgba(0, 0, 0, 0)
+
+        p
+            border-bottom: 2px solid rgb(128,128,128)
+            opacity: 0
+            
+        .mail
+            @include mixin.center-inner-item-toEnd
+
+        .phone
+            @include mixin.center-inner-item-toStart
+            justify-self: end
+
+        > div:last-child
+            @include mixin.center-inner-item
+            color: rgb(128,128,128)
+            opacity: 0
+
+            .creator
+                padding-right: 5px
+
+        // General Monitor styles 
+        @media screen and (min-width: var.$layout-breakpoint-small)
+            font-size: 52px
+        
+            .mail, .phone
+                width: 80%
+                padding: 22px
+
+            > div:last-child
+                width: 25%
+                .creator
+                    font-size: 18px
+
+        // General Monitor styles
+        @media screen and (max-width: var.$layout-breakpoint-small)
+            font-size: 30px
+        
+            .mail, .phone
+                width: 80%
+                padding: 22px 24px
+
+            // align .phone to right horizontally 
+            //   (overwrite mixin.center-inner-item-toStart)
+            .phone
+                justify-content: flex-end
+
+            > div:last-child
+                width: 50%
+                .creator
+                    font-size: 18px
+

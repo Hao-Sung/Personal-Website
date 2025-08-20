@@ -1,0 +1,21 @@
+@use '../../assets/SASS/var'
+
+.text-ring 
+    position: relative
+    user-select: none
+    pointer-events: none
+
+.text-ring [style*=--index]
+    font-size: 16px
+    position: absolute
+    text-transform: uppercase
+    font-family: monospace
+    transform: translate(-50%, -50%) rotate(calc(360deg / var(--total) * var(--index))) translateY(calc(var(--radius, 5) * -1ch))
+
+    // General Monitor styles 
+    //@media screen and (min-width: var.$layout-breakpoint-small)
+    //    font-size: 16px
+
+    // Mobile styles
+    //@media screen and (max-width: var.$layout-breakpoint-small)
+    //    font-size: 16px
