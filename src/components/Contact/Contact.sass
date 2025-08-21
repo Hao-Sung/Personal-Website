@@ -29,20 +29,20 @@
         // General Monitor styles 
         @media screen and (min-width: var.$layout-breakpoint-small)
             .left-slide
-                font-size: 280px
+                font-size: clamp(14.875rem, 5vw, 17.5rem)
                 margin-bottom: -55px
             .right-slide
-                font-size: 280px
+                font-size: clamp(14.875rem, 5vw, 17.5rem)
                 margin-top: -55px
 
         // Mobile styles
         @media screen and (max-width: var.$layout-breakpoint-small)
             .left-slide
-                font-size: 100px
+                font-size: clamp(5.312rem, 5vw, 6.25rem)
                 margin-bottom: -15px
 
             .right-slide
-                font-size: 100px
+                font-size: clamp(5.312rem, 5vw, 6.25rem)
                 margin-top: -15px
 
 
@@ -73,7 +73,7 @@
 
         // General Monitor styles 
         @media screen and (min-width: var.$layout-breakpoint-small)
-            font-size: 52px
+            font-size: clamp(2.762rem, 5vw, 3.25rem)
         
             .mail, .phone
                 width: 80%
@@ -82,11 +82,11 @@
             > div:last-child
                 width: 25%
                 .creator
-                    font-size: 18px
+                    font-size: clamp(0.956rem, 3vw, 1.125rem)
 
         // General Monitor styles
         @media screen and (max-width: var.$layout-breakpoint-small)
-            font-size: 30px
+            font-size: clamp(1.594rem, 3vw, 1.875rem)
         
             .mail, .phone
                 width: 80%
@@ -100,5 +100,5 @@
             > div:last-child
                 width: 50%
                 .creator
-                    font-size: 18px
+                    font-size: clamp(0.956rem, 3vw, 1.125rem)
 

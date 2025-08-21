@@ -63,7 +63,7 @@
     // General Monitor styles 
     @media screen and (min-width: var.$layout-breakpoint-small)
         #name
-            font-size: 220px
+            font-size: clamp(11.688rem, 5vw, 13.75rem)
         #scrollDownSign
             bottom: 16%
             right: 9%
@@ -71,7 +71,7 @@
     // Mobile styles
     @media screen and (max-width: var.$layout-breakpoint-small)
         #name
-            font-size: 85px
+            font-size: clamp(4.515rem, 5vw, 5.312rem)
         #scrollDownSign
             bottom: 16%
             right: 20%
@@ -103,10 +103,10 @@
     @media screen and (min-width: var.$layout-breakpoint-small)
         div
             span
-                font-size: 220px
+                font-size: clamp(11.688rem, 5vw, 13.75rem)
 
         div:nth-child(2) span
-            font-size: 290px
+            font-size: clamp(15.406rem, 5vw, 18.125rem)
             margin-top: -80px
 
         div:nth-child(3) span
@@ -116,7 +116,7 @@
     @media screen and (max-width: var.$layout-breakpoint-small)
         div
             span
-                font-size: 65px
+                font-size: clamp(3.453rem, 5vw, 4.062rem)
 
         div:first-child span
             //margin-bottom: -500px <-----------
@@ -127,4 +127,4 @@
             margin-top: -250px
 
         div:nth-child(2) span
-            font-size: 90px
+            font-size: clamp(4.781rem, 5vw, 5.625rem)

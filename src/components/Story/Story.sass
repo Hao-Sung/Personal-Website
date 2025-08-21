@@ -102,7 +102,7 @@
             //border: 3px solid #FFF
             top: 20%
             height: 104px
-            font-size: 35px
+            font-size: clamp(1.86rem, 5vw, 2.188rem)
 
             > div
                 position: absolute
@@ -114,7 +114,7 @@
             top: 24%
             width: 90%
             height: 300px
-            font-size: 16px
+            font-size: clamp(0.85rem, 1.8vw, 1.0rem)
             line-height: 2
 
             > div
@@ -128,11 +128,11 @@
     // Mobile styles
     @media screen and (max-width: var.$layout-breakpoint-small)
         header
-            font-size: 20px
+            font-size: clamp(1.062rem, 3vw, 1.25rem)
             padding-bottom: 20px
         .content
             width: 90%
-            font-size: 14px
+            font-size: clamp(0.744rem, 1.8vw, 0.875rem)
             line-height: 2
 
 
@@ -159,7 +159,7 @@
         header
             position: relative
             //border: 3px solid #F0F
-            font-size: 35px
+            font-size: clamp(1.86rem, 5vw, 2.188rem)
             top: 8%
             height: 52px
 
@@ -181,7 +181,7 @@
             .item
                 cursor: pointer
                 transition: 0.2s ease-in-out
-                font-size: 16px
+                font-size: clamp(0.85rem, 1.8vw, 1.0rem)
                 border-bottom: 2px solid #535050
                 svg
                     transition: 0.5s ease-in-out
@@ -198,12 +198,12 @@
     // Mobile styles
     @media screen and (max-width: var.$layout-breakpoint-small)
         header
-            font-size: 20px
+            font-size: clamp(1.062rem, 3vw, 1.25rem)
             padding-bottom: 20px
 
         .table
             .item
-                font-size: 15px
+                font-size: clamp(0.797rem, 1.8vw, 0.938rem)
                 padding: 20px 0px
                 white-space: nowrap
                 border-bottom: 1px solid #535050

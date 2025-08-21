@@ -83,15 +83,15 @@
         // General Monitor styles 
         @media screen and (min-width: var.$layout-breakpoint-small)
             header
-                font-size: 100px
+                font-size: clamp(5.312rem, 5vw, 6.25rem)
             .keywords
-                font-size: 16px
+                font-size: clamp(0.85rem, 1.8vw, 1.0rem)
             .container-keywords
                 margin-top: -10px
                 
         // Mobile styles
         @media screen and (max-width: var.$layout-breakpoint-small)
             header
-                font-size: 30px
+                font-size: clamp(1.594rem, 3vw, 1.875rem)
             .keywords
-                font-size: 14px
+                font-size: clamp(0.744rem, 1.8vw, 0.875rem)

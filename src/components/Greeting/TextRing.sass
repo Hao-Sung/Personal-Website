@@ -6,7 +6,7 @@
     pointer-events: none
 
 .text-ring [style*=--index]
-    font-size: 16px
+    font-size: clamp(0.85rem, 1.8vw, 1.0rem)
     position: absolute
     text-transform: uppercase
     font-family: monospace
@@ -14,8 +14,8 @@
 
     // General Monitor styles 
     //@media screen and (min-width: var.$layout-breakpoint-small)
-    //    font-size: 16px
+    //    font-size: clamp(0.85rem, 1.8vw, 1.0rem)
 
     // Mobile styles
     //@media screen and (max-width: var.$layout-breakpoint-small)
-    //    font-size: 16px
+    //    font-size: clamp(0.85rem, 1.8vw, 1.0rem)
